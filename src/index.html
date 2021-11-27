@@ -20,7 +20,7 @@
 </head><body>
 
     <div id="app" v-cloak>
-        <drawer></drawer>
+        <drawer v-bind:payload="msgRecvd.payload"></drawer>
     </div>
 
     <!-- These MUST be in the right order. Note no leading / -->
