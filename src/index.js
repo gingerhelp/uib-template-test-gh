@@ -21,9 +21,16 @@
 /** @see https://totallyinformation.github.io/node-red-contrib-uibuilder/#/front-end-library */
 
 // eslint-disable-next-line no-unused-vars
+
+import components from './components/index.js';
+
+
+// Activate Vue Material
+Vue.use(VueMaterial.default);
+
 const app = new Vue({
     el: '#app',
-
+    components,
     data() { return {
 
         startMsg    : 'Vue has started, waiting for messages',
@@ -154,6 +161,7 @@ const app = new Vue({
         //console.debug('[indexjs:Vue.mounted] app mounted - setting up uibuilder watchers')
 
         var app = this  // Reference to `this` in case we need it for more complex functions
+
 
         // If msg changes - msg is updated when a standard msg is received from Node-RED over Socket.IO
         uibuilder.onChange('msg', function(msg){
